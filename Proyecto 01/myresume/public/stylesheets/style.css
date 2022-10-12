@@ -6,3 +6,38 @@ body {
 a {
   color: #00B7FF;
 }
+#hmenu {
+  color: white;
+}
+
+#hmenu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+#hmenu ul li {
+  display: inline;
+  float: right;
+  text-decoration: none;
+}
+#hmenu ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#hmenu ul li a:hover{
+  background-color: #111;
+}
+
+#profilepic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 8%;
+  left: 10%;
+}
