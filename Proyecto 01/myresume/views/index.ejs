@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' >
-  </head>
-  <body>
-    <nav id="hmenu">
-      <ul>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">About me</a></li>
-      </ul>
-    </nav>
-    <section>
-      <caption><h2>My Resume</h2></caption>
-      
-      <img src="https://img.freepik.com/foto-gratis/joven-confiado_1098-20868.jpg" alt="Foto perfil" width="4100" id="profilepic">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+
+<body>
+  <nav id="hmenu">
+    <ul>
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">About me</a></li>
+    </ul>
+  </nav>
+  <div id="general-container">
+
+    <section id="info-container">
+      <caption>
+        <h2>My Resume</h2>
+      </caption>
+
     </section>
-  </body>
+    <section id="profilepic-container">
+      <div class="border-right-container">
+        <img src="https://img.freepik.com/foto-gratis/joven-confiado_1098-20868.jpg" alt="Foto perfil" width="4100"
+        id="profilepic">
+      </div>
+    </section>
+  </div>
+</body>
+
 </html>
