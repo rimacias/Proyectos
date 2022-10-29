@@ -6,28 +6,31 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c0bed65393.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <nav id="hmenu">
-    <ul>
-      <li><a href="#">Partners</a></li>
-      <li><a href="#">About me</a></li>
-    </ul>
-  </nav>
   <div id="general-container">
-
+    <nav id="lateral-menu">
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-diagram-project"></i> Proyectos</a></li>
+        <li><a href="#"><i class="fa-solid fa-money-check-dollar"></i> Earnings</a></li>
+        <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Estudios</a></li>
+        <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-card"></i> Contact</a></li>
+      </ul>
+    </nav>
+    <section id="profilepic-container">
+    </section>
     <section id="info-container">
       <caption>
-        <h2><%= title %></h2>
+        <h2>
+          <%= title %>
+        </h2>
       </caption>
     </section>
-    <section id="profilepic-container">
-      <div class="border-right-container">
-        <img src="https://img.freepik.com/foto-gratis/joven-confiado_1098-20868.jpg" alt="Foto perfil" width="4100"
-        id="profilepic">
-      </div>
-    </section>
+
   </div>
 </body>
 
