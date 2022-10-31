@@ -6,32 +6,178 @@
     <%= title %>
   </title>
   <link rel='stylesheet' href='/stylesheets/style.css'>
+  <link rel='stylesheet' href='/stylesheets/table.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/c0bed65393.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <script src="/js/script.js"></script>
 </head>
 
 <body>
+  <nav class="top-menu tm-mobile">
+    <ul>
+      <li>
+        <a href="#">
+          <label for="menu-showed-check"><i class="fa-solid fa-bars hamburguer"></i></label>
+        </a>
+      </li>
+      <li><a href=""><b>RM</b></a></li>
+      <li><a href="#"></a></li>
+    </ul>
+  </nav>
+  <input type="checkbox" class="menu-showed__check" id="menu-showed-check">
+  <nav id="main-menu" class="top-menu tm_hover">
+    <ul>
+      <li><a href="#" id="btn-proyectos"><i class="fa-solid fa-diagram-project"></i> Proyectos</a></li>
+      <li><a href="#" id="btn-experiencia"><i class="fa-solid fa-money-check-dollar"></i> Experiencia</a></li>
+      <li><a href="#" id="btn-estudios"><i class="fa-solid fa-graduation-cap"></i> Estudios</a></li>
+      <li><a href="#" id="btn-contacto"><i class="fa-solid fa-address-card"></i> Contacto</a></li>
+    </ul>
+  </nav>
   <div id="general-container">
-    <nav id="lateral-menu">
-      <ul>
-        <li><a href="#"><i class="fa-solid fa-diagram-project"></i> Proyectos</a></li>
-        <li><a href="#"><i class="fa-solid fa-money-check-dollar"></i> Earnings</a></li>
-        <li><a href="#"><i class="fa-solid fa-graduation-cap"></i> Estudios</a></li>
-        <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a></li>
-        <li><a href="#"><i class="fa-solid fa-address-card"></i> Contact</a></li>
-      </ul>
-    </nav>
+
     <section id="profilepic-container">
+      <section>
+        <img id="profilepic" src='/images/suit_rm.png' />
+      </section>
+      <section>
+        <h1>Ramón Macías Ochoa</h1>
+        <span>
+          <p>Soy un trabajador dedicado que se esfuerza por aprender día a día.</p>
+          <p>Ingeniero en Ciencias Computacionales</p>
+        </span>
+        <div class="social-networks">
+          <a href="https://twitter.com/monchardo"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.facebook.com/Monchardo/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/monchardo/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/ram%C3%B3n-mac%C3%ADas-4460b5185/"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/rimacias"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </section>
+      
     </section>
     <section id="info-container">
-      <caption>
-        <h2>
-          <%= title %>
-        </h2>
-      </caption>
-    </section>
+      <div class="content proyectos">
+        <h1>Proyectos</h1>
+        <div>
+          <i class="fa-solid fa-vector-square"></i>
+          <span>
+            Cración de pixeles usando inteligencia artificial y técnicas de in-painting para bajar la carga del cpu al
+            renderizar
+          </span>
+        </div>
+        <div>
+          <i class="fa-solid fa-microchip"></i>
+          <span>
+            Desarrollo de algoritmo de cálculo de trazado de rayos usando IA.
+          </span>
+        </div>
+      </div>
+      <div class="content experiencia">
+        <h1>Experiencia</h1>
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-6t3r" colspan="2">Experiencia en lenguajes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-fymr">Lenguaje</td>
+              <td class="tg-4xff">Nivel</td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Python</td>
+              <td class="tg-brdm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Java</td>
+              <td class="tg-brdm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">R</td>
+              <td class="tg-brdm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="tg-0pky">Angular</td>
+              <td class="tg-brdm">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content estudios">
+        <h1>Estudios</h1>
+        <div>
+          <img src="/images/anai.png" alt="Logo ANAI">
+          <span>
+            Educación Básica
+          </span>
+        </div>
+        <div>
+          <img src="/images/anai.png" alt="Logo ANAI">
+          <span>
+            Educación Secundaria
+          </span>
+        </div>
+        <div>
+          <img src="/images/logo_espol.svg" alt="Logo ESPOL">
+          <span>
+            Educación Secundaria
+          </span>
+        </div>
+      </div>
 
+      <div class="content center contacto">
+        <h1>Contacto</h1>
+        <section class="center">
+          <h3>Mi pasatiempo favorito:</h3>
+          <audio src="/audio/OPOpening1.mp3" controls></audio>
+        </section>
+        <form action="post">
+          <label for="nombres">Nombres:</label>
+          <input type="text" name="nombres" id="nombres">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" name="apellidos" id="apellidos">
+          <br>
+          <label for="mensaje">Mensaje:</label>
+          <input class="mensaje" type="text" name="mensaje" id="mensaje">
+          <input type="button" value="Submit" style="color:black">
+        </form>
+
+        <iframe class="rounded"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127584.11343991566!2d-80.05014090558612!3d-2.1523280974590655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d13cbe855805f%3A0x8015a492f4fca473!2sGuayaquil!5e0!3m2!1ses!2sec!4v1667220440166!5m2!1ses!2sec"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
   </div>
+
+  </section>
+
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 :root {
-  --primary-color: #B09A8F;
-  --secundary-color: #333;
+  --text-color: #ffeae0;
+  --light-color: #a6d1cb;
+  --primary-color: #333;
   --bg-color: #181F1E;
   --dark-bg-color: #080001;
 }
@@ -12,6 +13,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  color: var(--text-color);
 }
 
 img,
@@ -19,71 +21,327 @@ video {
   width: 100%;
   height: auto;
 }
-@media (min-width: 640px) { body {font-size:1rem;} }
-@media (min-width:960px) { body {font-size:1.2rem;} }
-@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:960px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width:1100px) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
 /* FIN Responsive design CSS*/
 
 body {
   background-color: var(--dark-bg-color);
   margin: 0;
-  height: 50rem;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.top-menu {
+  display: none;
+  background-color: var(--primary-color);
 }
 
-#lateral-menu {
-  background-color: var(--secundary-color);
-  color: white;
-  height: 100%;
-}
-
-#lateral-menu ul {
+.top-menu ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--secundary-color);
+  background-color: var(--primary-color);
 }
 
-#lateral-menu ul li {
-  display: block;
+.top-menu ul li {
   text-decoration: none;
 }
 
-#lateral-menu ul li a {
+.top-menu ul li a {
   display: block;
   color: white;
   text-align: left;
-  padding: 14px 16px;
+  padding: 1rem 1.1rem;
   text-decoration: none;
+  transition: all .2s ease-in-out;
 }
 
-#lateral-menu ul li a:hover {
-  background-color: #111;
+.tm_hover ul li a:hover {
+  background-color: var(--dark-bg-color);
+}
+
+.tm-mobile {
+  display: block;
+}
+
+.tm-mobile ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #general-container {
-  display: grid;
-  grid-template-columns: 15% 25% 100%;
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
-#profilepic-container {
-  align-items: center;
+#profilepic {
+  border-radius: 50%;
+  width: 10rem;
+}
 
+#profilepic-container {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: var(--bg-color);
-  border-radius: 0px 0px 0px 5px;
+}
+
+#profilepic-container>* {
+  text-align: center;
 }
 
 #info-container {
+  width: 100%;
   background-color: var(--bg-color);
   padding: 1rem;
-
-  width: 60%;
+  padding-left: 3rem;
   color: white;
-  border-radius: 0px 0px 5px 0px;
+}
+
+#main-menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-showed__check {
+  display: none;
+}
+
+.menu-showed__check:checked+#main-menu {
+  display: block;
+}
+
+.hamburguer {
+  cursor: pointer;
+}
+
+.social-networks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 1rem;
+  justify-content: center;
+}
+
+.social-networks i {
+  text-shadow: .1rem .1rem #8d8c8c;
+  font-size: 3rem;
+  color: white;
+  transition: all .1s ease-in-out;
+}
+
+.social-networks a:hover i {
+  transform: scale(1.3);
+  color: #ffc4cb;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+
+}
+
+.proyectos div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.proyectos div i {
+  font-size: 10rem;
+}
+
+.proyectos div span {
+  text-align: justify;
+  font-size: 2rem;
+}
+
+.estudios div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+
+}
+
+.estudios div h3 {
+  font-size: 5rem;
+}
+.estudios div img{
+  padding: 1rem;
+  background-color: #ffeae0;
+  border-radius: 1rem;
+  box-shadow: #ffeae0;
+}
+
+form label,form input {
+width: 100%;
+}
+.estudios div span {
+  text-align: justify;
+  font-size: 2rem;
+}
+.rounded{
+  border-radius: 1rem;
+  width: 80%;
+}
+.mensaje{
+  width: 100%;
+  height: 10rem;
+}
+@media screen and (min-width: 768px) {
+  .proyectos div:nth-child(2n-1) {
+    flex-direction: row-reverse;
+  }
+
+  .proyectos div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .proyectos div i {
+    width: 30%;
+  }
+
+  .proyectos div span {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+  }
+  .estudios div:nth-child(2n-1) {
+    flex-direction: row-reverse;
+  }
+
+  .estudios div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .estudios div img {
+    width: 35%;
+  }
+
+  .estudios div span {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-menu {
+    display: block;
+  }
+
+  .tm-mobile {
+    display: none;
+  }
+
+  .top-menu ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--primary-color);
+  }
+
+  .top-menu ul li {
+    text-decoration: none;
+  }
+
+  .top-menu ul li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+  }
+
+  .tm_hover ul li a:hover {
+    background-color: var(--dark-bg-color);
+    transform: scale(1.1);
+  }
+
+  #general-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+  }
+
+  #profilepic {
+    border-radius: 50%;
+    width: 10rem;
+  }
+
+  #profilepic-container {
+    width: 25%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-right: #B09A8F 2px solid;
+    background-color: var(--bg-color);
+  }
+
+  #profilepic-container>* {
+    text-align: center;
+  }
+
+  #info-container {
+    width: 75%;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    padding-left: 3rem;
+    color: white;
+  }
+
 }
