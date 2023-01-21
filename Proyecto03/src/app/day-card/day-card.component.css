@@ -1,0 +1,8 @@
+.price {
+    color: #000;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    position: relative;
+    top: 10%;
+}
