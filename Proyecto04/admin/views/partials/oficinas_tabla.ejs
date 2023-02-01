@@ -1,0 +1,43 @@
+<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Oficinas</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ciudad</th>
+                        <th>Teléfono</th>
+                        <th>Dirección Línea 1</th>
+                        <th>Dirección Línea 2</th>
+                        <th>Estado</th>
+                        <th>País</th>
+                        <th>Cód. Postal</th>
+                        <th>Territorio</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    <% aDatos.forEach((oficina, idx) => { %>  
+                      <tr>
+                        <td><%= idx+1 %></td>  
+                        <td><%= oficina.city %></td>  
+                        <td><%= oficina.phone %></td>  
+                        <td><%= oficina.addressLine1 %></td>  
+                        <td><%= oficina.addressLine2 %></td>  
+                        <td><%= oficina.state %></td>  
+                        <td><%= oficina.country %></td>  
+                        <td><%= oficina.postalCode %></td>  
+                        <td><%= oficina.territory %></td>  
+                      </tr>  
+                    <% }); %>  
+                </tbody>  
+              </table>
+        </div>
+    </div>  
+</main>

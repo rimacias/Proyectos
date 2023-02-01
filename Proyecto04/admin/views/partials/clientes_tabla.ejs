@@ -1,0 +1,39 @@
+<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Clientes</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Ciudad</th>
+                        <th>Estado</th>
+                        <th>Código Postal</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    <% aDatos.forEach((cliente, idx) => { %>  
+                      <tr>
+                        <td><%= idx+1 %></td>  
+                        <td><%= cliente.customerName %></td>  
+                        <td><%= cliente.phone %></td>  
+                        <td><%= cliente.addressLine1 %></td>  
+                        <td><%= cliente.city %></td>  
+                        <td><%= cliente.state %></td>  
+                        <td><%= cliente.postalCode %></td>  
+                      </tr>  
+                    <% }); %>  
+                </tbody>  
+              </table>
+        </div>
+    </div>  
+</main>

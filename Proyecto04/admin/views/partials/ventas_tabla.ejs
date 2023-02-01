@@ -1,0 +1,41 @@
+<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Ventas</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th># Orden</th>
+                        <th>Fecha</th>
+                        <th>Cliente</th>
+                        <th>Estado</th>
+                        <th>Cód. Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    <% aDatos.forEach((venta, idx) => { %>  
+                      <tr>
+                        <td><%= venta.orderNumber %></td>  
+                        <td><%= venta.orderDate %></td>  
+                        <td><%= venta.customerNumber %></td>  
+                        <td><%= venta.status %></td>  
+                        <td><%= venta.productCode %></td>  
+                        <td><%= venta.quantityOrdered %></td>  
+                        <td><%= venta.priceEach %></td>  
+                        <td><%= venta.quantityOrdered * venta.priceEach %></td>  
+                      </tr>  
+                    <% }); %>  
+                </tbody>  
+              </table>
+        </div>
+    </div>  
+</main>

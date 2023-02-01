@@ -1,6 +1,19 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('customers', {
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class customer extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  }
+  customer.init({
     customerNumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -53,13 +66,10 @@ module.exports = function(sequelize, DataTypes) {
         model: 'employees',
         key: 'employeeNumber'
       }
-    },
-    creditLimit: {
-      type: DataTypes.DECIMAL(10,2),
-      allowNull: true
     }
   }, {
     sequelize,
+    modelName: 'customer',
     tableName: 'customers',
     timestamps: false,
     indexes: [
@@ -80,4 +90,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  return customer;
 };
