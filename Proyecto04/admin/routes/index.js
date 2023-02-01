@@ -37,6 +37,36 @@ router.get('/sales', async function (req, res, next) {
   res.render('show_data', { title: 'Ventas', aDatos: response.data, data: 'ventas' });
 });
 
+router.get('/products', async function (req, res, next) {
+  const URL = 'http://localhost:4444/sales/findAll/json'
+  const config = {
+    proxy: {
+      host: 'localhost',
+      port: 4444
+    }
+  }
+  var response = await axios.get(URL, config)
+  let aDatos = response.data;
+  let productsData = []
+  aDatos.forEach(item => {
+    let product = {
+      productCode: item.productCode,
+      productName: item.productName,
+      productLine: item.productLine,
+      productScale: item.productScale,
+      productVendor: item.productVendor,
+      productDescription: item.productDescription,
+      quantityInStock: item.quantityInStock,
+      buyPrice: item.buyPrice,
+      MSRP: item.MSRP
+    }
+    if (!productsData.some(item => item.productCode === product.productCode)){
+      productsData.push(product)
+    }
+  });
+  res.render('show_data', { title: 'Ventas', aDatos: productsData, data: 'productos' });
+});
+
 router.get('/customers', async function (req, res, next) {
   const URL = 'http://localhost:5555/customers/findAll/json'
   const config = {
@@ -62,32 +92,26 @@ router.get('/offices', async function (req, res, next) {
   res.render('show_data', { title: 'Oficinas', aDatos: response.data, data: 'oficinas' });
 });
 
-router.get('/reports', async function (req, res, next) {
-  const URL = 'http://localhost:5555/customers/findAll/json'
-  const config = {
-    proxy: {
-      host: 'localhost',
-      port: 5555
-    }
-  }
-  const clientes = await axios.get(URL, config)
-
-  res.render('reportes', { title: 'Reportes' , clientes: clientes.data});
-  
-  
-});
-
-router.get('/reports/:cn', async function (req, res, next) {
-  const URL = 'http://localhost:4444/sales/shippedByCn/' + req.params.cn
+router.get('/report/:Cn', async function (req, res, next) {
+  const URLC = 'http://localhost:5555/customers/findByCn/' + req.params.Cn + '/json'
+  const URL = 'http://localhost:4444/sales/shippedByCn/' + req.params.Cn
   const config = {
     proxy: {
       host: 'localhost',
       port: 4444
     }
   }
-  var response = await axios.get(URL, config)
-  res.render('reportes', { title: 'Reportes' , clientes: response});
+  const configC = {
+    proxy: {
+      host: 'localhost',
+      port: 5555
+    }
+  }
   
+  const response = await axios.get(URL, config)
+  const responseC = await axios.get(URLC, configC)
+
+  res.render('reportes', { title: 'Reportes', ventas: response.data, cliente: responseC.data[0] });
 });
 
 router.get("/total/:orderId", async function (req, res, next) {
@@ -108,7 +132,7 @@ router.get("/total/:orderId", async function (req, res, next) {
   }
   const response = await axios.get(URL2, config2);
   let { quantityOrdered, priceEach } = response.data;
-  arreglo = [quantityOrdered, priceEach]; 
+  arreglo = [quantityOrdered, priceEach];
   const response2 = await axios.post(URL, arreglo, config);
   res.render('total', { title: 'Total', total: response2.data });
 

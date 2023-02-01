@@ -1,12 +1,12 @@
-// DOM CONTENT LOADED
-document.addEventListener("DOMContentLoaded", function(event) {
-    selectCliente = document.getElementById("selectCustomer");
-    selectCliente.addEventListener("change", function() {
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    console.log("DOM fully loaded and parsed");
+    let selectCliente = document.getElementById("selectCustomer");
+    selectCliente.addEventListener("change", () => {
+        console.log("selectCliente change");
         selectCliente = document.getElementById("selectCustomer");
-        if (selectCliente.value != "") {
-            document.getElementById("btnReporte").disabled = false;
-        } else {
-            document.getElementById("btnReporte").disabled = true;
-        }
+        let tableSales = document.getElementById("tableSales");
+        let idCliente = selectCliente.value;
+        
     });
 });

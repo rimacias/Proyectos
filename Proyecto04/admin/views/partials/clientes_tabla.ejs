@@ -20,20 +20,36 @@
                         <th>Código Postal</th>
                     </tr>
                 </thead>
-                <tbody>  
-                    <% aDatos.forEach((cliente, idx) => { %>  
-                      <tr>
-                        <td><%= idx+1 %></td>  
-                        <td><%= cliente.customerName %></td>  
-                        <td><%= cliente.phone %></td>  
-                        <td><%= cliente.addressLine1 %></td>  
-                        <td><%= cliente.city %></td>  
-                        <td><%= cliente.state %></td>  
-                        <td><%= cliente.postalCode %></td>  
-                      </tr>  
-                    <% }); %>  
-                </tbody>  
-              </table>
+                <tbody>
+                    <% aDatos.forEach((cliente, idx)=> { %>
+                        <tr>
+                            <td>
+                                <%= idx+1 %>
+                            </td>
+                            <td>
+                                <a href="/report/<%= cliente.customerNumber %>">
+                                    <%= cliente.customerName %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= cliente.phone %>
+                            </td>
+                            <td>
+                                <%= cliente.addressLine1 %>
+                            </td>
+                            <td>
+                                <%= cliente.city %>
+                            </td>
+                            <td>
+                                <%= cliente.state %>
+                            </td>
+                            <td>
+                                <%= cliente.postalCode %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
         </div>
-    </div>  
+    </div>
 </main>
